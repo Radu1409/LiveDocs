@@ -17,7 +17,7 @@ import {
 
 import { Button } from "./ui/button";
 
-export const DeleteModal = ({ roomId }: DeleteModalProps) => {
+export const DeleteModal = ({ roomId, homePage }: DeleteModalProps) => {
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -43,7 +43,7 @@ export const DeleteModal = ({ roomId }: DeleteModalProps) => {
             alt="delete"
             width={20}
             height={20}
-            className="mt-1"
+            className={homePage ? '' : 'mt-1'}
           />
         </Button>
       </DialogTrigger>
@@ -70,6 +70,7 @@ export const DeleteModal = ({ roomId }: DeleteModalProps) => {
             variant="destructive"
             onClick={deleteDocumentHandler}
             className="gradient-red w-full"
+            disabled={loading}
           >
             {loading ? "Deleting..." : "Delete"}
           </Button>
