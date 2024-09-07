@@ -49,7 +49,6 @@
   .gradient-red {
     @apply bg-gradient-to-t from-red-500 to-red-400;
   }
-
   .shad-dialog {
     @apply w-full max-w-[400px] rounded-xl border-none bg-doc bg-cover px-5 py-7 shadow-xl sm:min-w-[500px] !important;
   }
@@ -135,15 +134,15 @@
   }
 
   .comments-container {
-    @apply mb-10 space-y-4 lg:w-fit flex w-full flex-col items-center justify-center;
+    @apply mb-10 space-y-4 lg:w-fit flex w-full flex-col items-center justify-center rounded-lg;
   }
 
   .comment-composer {
-    @apply w-full max-w-[800px] border border-dark-300 bg-dark-200 shadow-sm lg:w-[350px];
+    @apply w-full max-w-[800px] border border-dark-300 bg-dark-200 shadow-sm lg:w-[350px] rounded-lg;
   }
 
   .comment-thread {
-    @apply w-full max-w-[800px] border border-dark-300 bg-dark-200 shadow-sm lg:w-[350px] transition-all;
+    @apply w-full max-w-[800px] border border-dark-300 bg-dark-200 shadow-sm lg:w-[350px] rounded-lg;
   }
 
   .loader {
@@ -207,18 +206,24 @@
 /* ======================== Liveblocks Override */
 .lb-root {
   --lb-accent-subtle: #0b1527;
-  --lb-radius: 0px;
+  --lb-radius: 0.5rem;
   --lb-dynamic-background: #1b2840;
 }
 
 .lb-comment,
 .lb-thread-comments,
-.lb-composer,
 .lb-comment-reaction {
   background-color: #0f1c34;
   color: #fff;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
 }
 
+.lb-composer {
+  color: #fff;
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
 .lb-button {
   --lb-foreground-moderate: #fff;
 }
@@ -261,7 +266,7 @@
 .lb-dropdown-item,
 .lb-dropdown-item-icon,
 .lb-composer-editor {
-  color: #fff;
+  color: #e5ecfe;
 }
 
 .lb-composer-action {
@@ -272,16 +277,23 @@
   background: #0b1527;
   margin-top: 16px;
   padding: 12px;
-  border-radius: 4px;
-  font-size: 14px;
+  border-radius: 8px;
+  font-size: 13px;
 }
 
-.lb-comment-date,
+.lb-comment-date {
+  color: #b4c6ee;
+  font-size: 12px;
+}
 .lb-lexical-mention-suggestion-user,
 .lb-composer-suggestions-list-item,
-.lb-inbox-notification-date,
-.lb-comment-author {
+.lb-inbox-notification-date {
   color: #b4c6ee;
+}
+
+.lb-comment-author {
+  color: #fff;
+  font-size: 15px;
 }
 
 .data-liveblocks-portal {
@@ -290,12 +302,13 @@
 
 .lb-root:where(:not(.lb-root .lb-root)) {
   --lb-dynamic-background: #1b2840;
-  color: #fff;
+  color: #ffffff;
+  font-size: 16px;
 }
 
 .lb-composer-editor :where([data-placeholder]) {
   color: #b4c6ee;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .lb-lexical-floating-threads-thread:where([data-resolved]) {

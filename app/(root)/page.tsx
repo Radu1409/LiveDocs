@@ -9,6 +9,7 @@ import { getDocuments } from '@/lib/actions/room.actions';
 import { dateConverter } from '@/lib/utils';
 import { DeleteModal } from '@/components/DeleteModal';
 import Notifications from '@/components/Notifications';
+import SearchBar from '@/components/SearchBar';
 
 const Home = async () => {
   const clerkUser = await currentUser();
@@ -20,6 +21,7 @@ const Home = async () => {
     <main className='home-container'>
       <Header className='sticky left-0 top-0'>
         <div className='flex items-center gap-2 lg:gap-4'>
+          <SearchBar />
           <Notifications />
           <SignedIn>
             <UserButton />
@@ -44,16 +46,18 @@ const Home = async () => {
                     <Image 
                       src='/assets/icons/doc.svg'
                       alt='file'
-                      width={40}
-                      height={40}
+                      width={60}
+                      height={60}
                     />
                   </div>
-                  <div className='space-y-1'>
-                    <p className='line-clamp-1 text-lg'>{metadata.title}</p>
+                  <div className='space-y-1 w-full items-center'>
+                    <div className='flex items-center justify-between'>
+                      <p className='line-clamp-1 text-lg'>{metadata.title}</p>
+                      <DeleteModal roomId={id} homePage={true} />
+                    </div>
                     <p className='text-sm font-light text-blue-100'>Created about {dateConverter(createdAt)}</p>
                   </div>
                 </Link>
-                <DeleteModal roomId={id} />
               </li>
             ))}
           </ul>

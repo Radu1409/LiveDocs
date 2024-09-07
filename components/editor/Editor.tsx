@@ -10,13 +10,14 @@ import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin';
 import { ContentEditable } from '@lexical/react/LexicalContentEditable';
 import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin';
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary';
-import React from 'react';
+import React, { ComponentType } from 'react';
 
 import { FloatingComposer, FloatingThreads, liveblocksConfig, LiveblocksPlugin, useEditorStatus } from '@liveblocks/react-lexical'
 import { useThreads } from '@liveblocks/react/suspense';
 import Loader from '../Loader';
 import Comments from '../Comments';
 import { DeleteModal } from '../DeleteModal';
+import { Thread, ThreadProps } from '@liveblocks/react-ui';
 
 // Catch any errors that occur during Lexical updates and log them
 // or throw them as needed. If you don't throw them, Lexical will
@@ -50,7 +51,7 @@ export function Editor({ roomId, currentUserType }: { roomId: string, currentUse
         </div>
         <div className='editor-wrapper flex flex-col items-center justify-start'>
           {status === 'not-loaded' || status === 'loading' ? <Loader /> : (
-            <div className="editor-inner min-h-[1100px] relative mb-5 h-fit w-full max-w-[800px] shadow-md lg:mb-10">
+            <div className="editor-inner min-h-[1100px] relative mb-5 h-fit w-full max-w-[800px] shadow-md lg:mb-10 rounded-lg">
               <RichTextPlugin
                 contentEditable={
                   <ContentEditable className="editor-input h-full" />

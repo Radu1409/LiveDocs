@@ -51,7 +51,7 @@ const Collaborator = ({ roomId, creatorId, collaborator, email, user }: Collabor
         </div>
       </div>
       {creatorId === collaborator.id ? (
-        <p className='text-sm text-blue-100'>Owner</p>
+        <p className='text-sm text-blue-100 h-10 px-4 py-2 '>Owner</p>
       ) : (
         <div className='flex items-center'>
           <UserTypeSelector 
@@ -59,8 +59,11 @@ const Collaborator = ({ roomId, creatorId, collaborator, email, user }: Collabor
             setUserType={setUserType || 'viewer'}
             onClickHandler={shareDocumentHandler}
           />
-          <Button type='button' onClick={() => removeCollaboratorHandler(collaborator.email)}>
-            Remove
+          <Button type='button' onClick={() => removeCollaboratorHandler(collaborator.email)}
+            className='text-red-600'
+            disabled={loading}
+            >
+            {loading ? 'Removing' : 'Remove'}
           </Button>
         </div>
       )}

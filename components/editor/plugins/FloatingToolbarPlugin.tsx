@@ -106,6 +106,7 @@ import {
           left: 0,
           transform: `translate3d(${Math.round(x)}px, ${Math.round(y)}px, 0)`,
           minWidth: 'max-content',
+          
         }}
       >
         <div className="floating-toolbar">

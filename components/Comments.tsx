@@ -10,7 +10,7 @@ const ThreadWrapper = ({ thread }: ThreadWrapperProps) => {
     <Thread 
       thread={thread}
       data-state={isActive ? 'active' : null}
-      className={cn('comment-thread border', 
+      className={cn('comment-thread', 
         isActive && '!border-blue-500 shadow-md',
         thread.resolved && 'opacity-40'
       )}
@@ -24,7 +24,7 @@ const Comments = () => {
     <div className='comments-container'>
       <Composer className='comment-composer'/>
       {threads.map((thread) => (
-        <ThreadWrapper key={thread.id} thread={thread}/>
+        <ThreadWrapper key={thread.id} thread={thread} />
       ))}
     </div>
   )
