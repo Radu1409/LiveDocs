@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+  <h1>✨ <b>LiveDocs - Real-Time Document Collaboration Platform</b> 🚀</h1>
+</div>
 
-## Getting Started
+LiveDocs is an innovative application that enables seamless real-time document collaboration. It offers personalized access control, notifications, and advanced editing tools, making it a perfect platform to enhance full-stack development skills.
 
-First, run the development server:
+## 📸 Screenshots
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Radu1409/LiveDocs/refs/heads/main/public/assets/media/livedocs_1.png" alt="Photo 1" width="400"/>
+  <img src="https://raw.githubusercontent.com/Radu1409/LiveDocs/refs/heads/main/public/assets/media/livedocs_8.PNG" alt="Photo 8" width="400"/>
+  <img src="https://raw.githubusercontent.com/Radu1409/LiveDocs/refs/heads/main/public/assets/media/livedocs_0.png" alt="Photo 0" width="400"/>
+  <img src="https://raw.githubusercontent.com/Radu1409/LiveDocs/refs/heads/main/public/assets/media/livedocs_2.png" alt="Photo 2" width="400"/>
+  <img src="https://raw.githubusercontent.com/Radu1409/LiveDocs/refs/heads/main/public/assets/media/livedocs_3.png" alt="Photo 3" width="400"/>
+  <img src="https://raw.githubusercontent.com/Radu1409/LiveDocs/refs/heads/main/public/assets/media/livedocs_5.png" alt="Photo 5" width="400"/>
+  <img src="https://raw.githubusercontent.com/Radu1409/LiveDocs/refs/heads/main/public/assets/media/livedocs_6.png" alt="Photo 6" width="400"/>
+  <img src="https://raw.githubusercontent.com/Radu1409/LiveDocs/refs/heads/main/public/assets/media/livedocs_7.png" alt="Photo 7" width="400"/>
+</p>
 
+## 📝 Project Overview
+LiveDocs is a collaborative platform that allows users to create and edit documents in real time. Document owners can invite collaborators with view-only or edit access. Features like Live Cursor, commenting, and notifications significantly enhance the user experience.
+
+## 🔋 Features
+- 👉 **Real-Time Editing**: Collaborate with others simultaneously, with Live Cursor tracking every change.
+- 👉 **Access Control**: Invite users with view-only or edit permissions.
+- 👉 **Comments and Tagging**: Add comments to specific text fragments and tag collaborators for notifications.
+- 👉 **Notifications**: Get notified about new comments or edits.
+- 👉 **Document Styling**: Rich text editing with bold, italic, underline, alignment, and more.
+- 👉 **Document Sharing**: Share documents with controlled access and view active permissions.
+
+## <a name="tech-stack">⚙️ Tech Stack</a>
+- ✅ **TypeScript & NextJS**: Ensures performance and scalability for real-time features.
+- ✅ **LiveBlocks**: Powers live presence, collaborative cursor, and synchronized editing.
+- ✅ **Tailwind CSS & Shadcn**: Provides a modern, responsive, and intuitive design.
+- ✅ **Clerk**: Handles secure user authentication and management.
+- ✅ **Sentry**: Tracks errors and monitors performance for a smooth user experience.
+- ✅ **Lexical**: Enables advanced text editing with rich formatting options.
+
+## 📑 Contents
+- 🌟 [Getting Started](#getting-started)
+- 🛠️ [Installation Commands](#installation-commands)
+- 🎬 [Running the App](#running-the-app)
+
+## 🌟 Getting Started
+Follow the steps below to run the LiveDocs application locally.
+
+### 1️⃣ Initialize the Project
+```bash
+npx create-next-app@latest livedocs
+```
+### 2️⃣ Set Up Node.js
+```bash
+nvm install 20.16.0
+nvm use 20.16.0
+```
+### 3️⃣ Start the Application
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 🛠️ Installation Commands
+### Install Tailwind CSS and Shadcn
+```bash
+npm install tailwindcss postcss autoprefixer  
+npx tailwindcss init  
+npm install shadcn
+```
+### Install Additional Libraries
+```bash
+npm install @clerk/nextjs  
+npm install @liveblocks/client @liveblocks/zustand  
+npm install lexical @lexical/react  
+npm install sentry-nextjs
+```
+## 🎬 Running the App
+Start the development server:
+```bash
+npm run dev  
+```
+Open your browser and navigate to http://localhost:8081.
